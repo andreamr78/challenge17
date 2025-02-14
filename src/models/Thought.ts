@@ -19,7 +19,7 @@ const thoughtSchema = new Schema({
             if (date) return date.toISOString().split("T") [0];
         }
     },
-    userId:{
+    thoughtId:{
         type: Schema.Types.ObjectId, 
         ref:'user',
         required: true

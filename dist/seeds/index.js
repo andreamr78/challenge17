@@ -20,18 +20,18 @@ const seedDB = async () => {
         }
     ];
     const seedUsers = await User.insertMany(users);
-    console.log("Users: ", seedUsers);
-    console.log('users seeded');
+    // console.log("Users: ", seedUsers)
+    // console.log('users seeded');
     const thoughts = [
         {
             thoughtText: 'thoughttext user1',
             username: seedUsers[0].username,
-            userId: seedUsers[0]._id
+            thoughtId: seedUsers[0]._id
         },
         {
             thoughtText: 'thoughttext user2',
             username: seedUsers[1].username,
-            userId: seedUsers[1]._id
+            thoughtId: seedUsers[1]._id
         }
     ];
     await Thought.insertMany(thoughts);

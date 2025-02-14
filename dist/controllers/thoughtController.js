@@ -52,7 +52,7 @@ export const deleteThought = async (_req, res) => {
             res.status(404).json({ message: 'No thought with that ID' });
             return;
         }
-        await User.findByIdAndUpdate(thought.userId, { $pull: { thoughts: _req.params.thoughtId } }, { new: true });
+        await User.findByIdAndUpdate(thought.thoughtId, { $pull: { thoughts: _req.params.thoughtId } }, { new: true });
         res.json({ message: 'Thought deleted' });
     }
     catch (err) {

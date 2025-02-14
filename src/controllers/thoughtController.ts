@@ -63,7 +63,7 @@ export const deleteThought = async(_req: Request, res: Response) => {
         return;
         }
         await User.findByIdAndUpdate(
-            thought.userId,
+            thought.thoughtId,
             { $pull: { thoughts: _req.params.thoughtId } },
             { new: true }
         );

@@ -5,12 +5,12 @@ const router = Router();
 router.route('/')
     .get(asyncHandler(getAllThoughts))
     .post(asyncHandler(createThought));
-router.route('/:thoughId')
+router.route('/:thoughtId')
     .get(asyncHandler(getSingleThought))
     .put(asyncHandler(updateThought))
     .delete(asyncHandler(deleteThought));
-router.route('/:thoughId/reactions')
+router.route('/:thoughtId/reactions')
     .post(asyncHandler(addReaction));
-router.route('/:thoughId/reactions/:reactionId')
+router.route('/:thoughtId/reactions/:reactionId')
     .delete(asyncHandler(deleteReaction));
 export default router;
